@@ -27,7 +27,7 @@ document.querySelector('form').addEventListener('submit', async (e) => {
 
     try {
         // Use the Netlify function endpoint
-        const response = await fetch('https://abstech.netlify.app/.netlify/functions/sendMessage', {
+        const response = await fetch('https://abstech.netlify.app/.netlify/functions/sendMessage.js', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
