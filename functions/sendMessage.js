@@ -1,11 +1,23 @@
 import fetch from 'node-fetch';
 
 export const handler = async (event) => {
+    // Handle OPTIONS preflight request
+    if (event.httpMethod === 'OPTIONS') {
+        return {
+            statusCode: 204,  // No content
+            headers: {
+                'Access-Control-Allow-Origin': 'https://abstechs.github.io',  // Allow GitHub Pages
+                'Access-Control-Allow-Methods': 'POST, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type',
+            },
+        };
+    }
+
     if (event.httpMethod !== 'POST') {
         return {
             statusCode: 405,
             headers: {
-                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Origin': 'https://abstechs.github.io',  // Allow GitHub Pages
                 'Access-Control-Allow-Methods': 'POST',
             },
             body: JSON.stringify({ error: 'Method not allowed' }),
@@ -37,7 +49,7 @@ export const handler = async (event) => {
             return {
                 statusCode: 200,
                 headers: {
-                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Origin': 'https://abstechs.github.io',  // Allow GitHub Pages
                 },
                 body: JSON.stringify({ success: true }),
             };
@@ -46,7 +58,7 @@ export const handler = async (event) => {
             return {
                 statusCode: 500,
                 headers: {
-                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Origin': 'https://abstechs.github.io',  // Allow GitHub Pages
                 },
                 body: JSON.stringify({ error: 'Telegram API error', details: errorDetails }),
             };
@@ -55,7 +67,7 @@ export const handler = async (event) => {
         return {
             statusCode: 500,
             headers: {
-                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Origin': 'https://abstechs.github.io',  // Allow GitHub Pages
             },
             body: JSON.stringify({ error: 'Failed to send message', details: error.message }),
         };

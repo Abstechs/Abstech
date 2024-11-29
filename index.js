@@ -1,8 +1,8 @@
 document.querySelector('form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('name').value ? `*Name:* ${document.getElementById('name').value.trim()}\n` : '';
-    const email = document.getElementById('email').value ? document.getElementById('email').value.trim() : '';
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
     const mess = document.getElementById('message').value?.trim() || 'Hi, AbsTech. I saw your portfolio and need your services for my business (please specify).';
 
     // Validate email
@@ -15,7 +15,8 @@ document.querySelector('form').addEventListener('submit', async (e) => {
         return; // Stop execution if email is invalid
     }
 
-    const message = `${name}*Email:* ${email}\n${mess}`;
+    // Create the message
+    const message = `${name ? `*Name:* ${name}\n` : ''}*Email:* ${email}\n${mess}`;
 
     // Show a loading notification
     iziToast.info({
@@ -43,7 +44,8 @@ document.querySelector('form').addEventListener('submit', async (e) => {
                 position: 'topRight',
             });
         } else {
-            throw new Error('Failed to send message');
+            const errorDetails = await response.text();
+            throw new Error(`Failed to send message: ${errorDetails}`);
         }
     } catch (error) {
         console.error('Error:', error);
