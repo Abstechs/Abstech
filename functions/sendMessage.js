@@ -5,8 +5,8 @@ exports.handler = async (event) => {
         return {
             statusCode: 405,
             headers: {
-                'Access-Control-Allow-Origin': '*', // Allow requests from all origins
-                'Access-Control-Allow-Methods': 'POST', // Allow only POST requests
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'POST',
             },
             body: JSON.stringify({ error: 'Method not allowed' }),
         };
@@ -40,7 +40,7 @@ console.log('Chat ID:', process.env.TELEGRAM_CHAT_ID);
             return {
                 statusCode: 200,
                 headers: {
-                    'Access-Control-Allow-Origin': '*', // Allow requests from all origins
+                    'Access-Control-Allow-Origin': '*',
                 },
                 body: JSON.stringify({ success: true }),
             };
@@ -49,7 +49,7 @@ console.log('Chat ID:', process.env.TELEGRAM_CHAT_ID);
             return {
                 statusCode: 500,
                 headers: {
-                    'Access-Control-Allow-Origin': '*', // Allow requests from all origins
+                    'Access-Control-Allow-Origin': '*',
                 },
                 body: JSON.stringify({ error: 'Telegram API error', details: errorDetails }),
             };
@@ -58,7 +58,7 @@ console.log('Chat ID:', process.env.TELEGRAM_CHAT_ID);
         return {
             statusCode: 500,
             headers: {
-                'Access-Control-Allow-Origin': '*', // Allow requests from all origins
+                'Access-Control-Allow-Origin': '*',
             },
             body: JSON.stringify({ error: 'Failed to send message', details: error.message }),
         };
