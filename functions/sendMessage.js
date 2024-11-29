@@ -4,13 +4,16 @@ exports.handler = async (event) => {
     if (event.httpMethod !== 'POST') {
         return {
             statusCode: 405,
+            headers: {
+                'Access-Control-Allow-Origin': '*', // Allow requests from all origins
+                'Access-Control-Allow-Methods': 'POST', // Allow only POST requests
+            },
             body: JSON.stringify({ error: 'Method not allowed' }),
         };
     }
 
     const { message } = JSON.parse(event.body);
 
-    // Securely store these values in Netlify environment variables
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
@@ -33,16 +36,28 @@ exports.handler = async (event) => {
         if (response.ok) {
             return {
                 statusCode: 200,
+                headers: {
+                    'Access-Control-Allow-Origin': '*', // Allow requests from all origins
+                },
                 body: JSON.stringify({ success: true }),
             };
         } else {
-            throw new Error('Telegram API error');
+            const errorDetails = await response.text();
+            return {
+                statusCode: 500,
+                headers: {
+                    'Access-Control-Allow-Origin': '*', // Allow requests from all origins
+                },
+                body: JSON.stringify({ error: 'Telegram API error', details: errorDetails }),
+            };
         }
     } catch (error) {
-        console.error(error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: 'Failed to send message' }),
+            headers: {
+                'Access-Control-Allow-Origin': '*', // Allow requests from all origins
+            },
+            body: JSON.stringify({ error: 'Failed to send message', details: error.message }),
         };
     }
 };
