@@ -1,29 +1,13 @@
 const fetch = require('node-fetch');
 
 exports.handler = async (event) => {
-    const allowedOrigins = ['https://abstechs.github.io'];
-
-    const origin = event.headers.origin;
-    const isAllowed = allowedOrigins.includes(origin);
-
-    const corsHeaders = {
-        'Access-Control-Allow-Origin': isAllowed ? origin : 'null', // Allow only the specified origin
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
-    };
-
-    if (event.httpMethod === 'OPTIONS') {
-        return {
-            statusCode: 200,
-            headers: corsHeaders,
-            body: '',
-        };
-    }
-
     if (event.httpMethod !== 'POST') {
         return {
             statusCode: 405,
-            headers: corsHeaders,
+            headers: {
+                'Access-Control-Allow-Origin': '*', // Allow requests from all origins
+                'Access-Control-Allow-Methods': 'POST', // Allow only POST requests
+            },
             body: JSON.stringify({ error: 'Method not allowed' }),
         };
     }
@@ -32,6 +16,9 @@ exports.handler = async (event) => {
 
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
+    
+console.log('Bot Token:', process.env.TELEGRAM_BOT_TOKEN);
+console.log('Chat ID:', process.env.TELEGRAM_CHAT_ID);
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
     const data = {
@@ -52,20 +39,27 @@ exports.handler = async (event) => {
         if (response.ok) {
             return {
                 statusCode: 200,
-                headers: corsHeaders,
+                headers: {
+                    'Access-Control-Allow-Origin': '*', // Allow requests from all origins
+                },
                 body: JSON.stringify({ success: true }),
             };
         } else {
+            const errorDetails = await response.text();
             return {
                 statusCode: 500,
-                headers: corsHeaders,
-                body: JSON.stringify({ error: 'Telegram API error' }),
+                headers: {
+                    'Access-Control-Allow-Origin': '*', // Allow requests from all origins
+                },
+                body: JSON.stringify({ error: 'Telegram API error', details: errorDetails }),
             };
         }
     } catch (error) {
         return {
             statusCode: 500,
-            headers: corsHeaders,
+            headers: {
+                'Access-Control-Allow-Origin': '*', // Allow requests from all origins
+            },
             body: JSON.stringify({ error: 'Failed to send message', details: error.message }),
         };
     }
