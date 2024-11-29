@@ -26,9 +26,10 @@ document.querySelector('form').addEventListener('submit', async (e) => {
     });
 
     try {
-        // Use the Netlify function endpoint
-        const response = await fetch('https://abstech.netlify.app/.netlify/functions/sendMessage.js', {
+        // Use the correct Netlify function endpoint
+        const response = await fetch('https://abstech.netlify.app/.netlify/functions/sendMessage', {
             method: 'POST',
+            mode: 'cors', // Explicitly set CORS mode
             headers: {
                 'Content-Type': 'application/json',
             },
