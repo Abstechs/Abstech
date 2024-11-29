@@ -1,0 +1,192 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 80px 20px;
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+.cta-btn-w {
+    background-color: #27a51c;
+    color: white;
+    /*padding: 20px 20px;*/
+    padding: 5px;
+    border-radius: 50%;
+    text-decoration: none;
+
+    
+}
+
+.cta-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;  /* Ensures that images fit within their containers */
+}
+
+img.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+img.service, img.project {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Ensures the icon/image fits without stretching */
+}
+
+img.service {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+img.project {
+    max-width: 100%;
+    height: 200px; /* Ensure project images maintain a consistent height */
+    object-fit: cover;
+}
+
+/* Sections */
+.section-padding {
+    padding: 60px 20px;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.bg-dark {
+    background-color: #343a40 !important;
+}
+
+/* Services Section */
+.service-item {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.service-item h3 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Grid Layouts */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col-md-4, .col-sm-6, .col-12 {
+    flex: 1 1 30%; /* Ensure 3 columns on medium screens */
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 1 1 48%; /* 2 columns on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .col-md-4, .col-sm-6 {
+        flex: 1 1 100%; /* 1 column on extra small screens */
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Form Styling */
+.form-control {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button.cta-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+button.cta-btn-w {
+    padding: 12px 12px;
+    border: none;
+    border-radius: 50%;
+    background-color: #27a51c;
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+button.cta-btn-w:hover {
+    background-color: #1d7b15;
+}
+
+button.cta-btn:hover {
+    background-color: #0056b3;
+}

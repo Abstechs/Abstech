@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbsTech Projects</title>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(to right, #000000, #0b2989, #154dff);
+        }
+        .project-description {
+            display: none;
+        }
+        .project-card:hover .project-description {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white h-screen flex flex-col justify-center items-center text-center px-4">
+        <div class="w-32 h-32 mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
+            <!-- Replace 'your-picture.jpg' with your actual image file path -->
+            <img src="/pics/abs.png" alt="AbsTech" class="w-full h-full object-cover">
+        </div>
+        <h1 class="text-5xl font-extrabold mb-4">Welcome to AbsTech</h1>
+        <p class="text-lg mb-6 max-w-3xl mx-auto">Explore our innovative projects designed to enhance your digital experience with cutting-edge solutions.</p>
+        <a href="#projects" class="bg-white text-indigo-600 px-6 py-3 rounded-full shadow-lg text-lg transition duration-300 hover:bg-indigo-600 hover:text-white">Explore Projects</a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Projects</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Project Card 1 -->
+                <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
+                    <img src="project1.jpg" alt="Project 1" class="w-full h-56 object-cover">
+                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
+                    <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
+                        <a href="project1.html" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
+                    </div>
+                    <div class="absolute bottom-0 p-4 text-sm text-gray-600 project-description">
+                        <p>This project focuses on developing advanced web solutions to enhance user interaction and performance.</p>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
+                    <img src="project2.jpg" alt="Project 2" class="w-full h-56 object-cover">
+                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
+                    <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
+                        <a href="project2.html" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
+                    </div>
+                    <div class="absolute bottom-0 p-4 text-sm text-gray-600 project-description">
+                        <p>A next-gen e-commerce platform designed to maximize conversions and user engagement with AI-based tools.</p>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
+                    <img src="project3.jpg" alt="Project 3" class="w-full h-56 object-cover">
+                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
+                    <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
+                        <a href="project3.html" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
+                    </div>
+                    <div class="absolute bottom-0 p-4 text-sm text-gray-600 project-description">
+                        <p>This innovative platform brings together social media engagement tools that help you grow and manage your online presence.</p>
+                    </div>
+                </div>
+                <!-- Project Card 4 -->
+                <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
+                    <img src="project4.jpg" alt="Project 4" class="w-full h-56 object-cover">
+                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
+                    <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
+                        <a href="project4.html" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
+                    </div>
+                    <div class="absolute bottom-0 p-4 text-sm text-gray-600 project-description">
+                        <p>Leveraging cutting-edge tech to offer seamless online payment solutions for all business types.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <p>&copy; 2024 AbsTech. All Rights Reserved.</p>
+        <p>Follow us on <a href="https://twitter.com/AbsTech" class="underline text-indigo-400">Twitter</a>, <a href="https://facebook.com/AbsTech" class="underline text-indigo-400">Facebook</a>, and <a href="https://instagram.com/AbsTech" class="underline text-indigo-400">Instagram</a>.</p>
+    </footer>
+
+    <script>
+        // JavaScript for toggling project description visibility
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const description = card.querySelector('.project-description');
+                description.style.display = (description.style.display === 'block') ? 'none' : 'block';
+            });
+        });
+    </script>
+
+</body>
+</html>
