@@ -27,6 +27,7 @@
     <!-- Pace.js CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         body{
@@ -50,7 +51,7 @@
     <section class="gradient-bg text-white h-screen flex flex-col justify-center items-center text-center px-4">
         <div class="w-32 h-32 mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
             <!-- profile picture-->
-            <img src="/pics/abstech.jpg" alt="AbsTech" class="w-full h-full object-cover">
+            <img src="./pics/abstech.jpg" alt="AbsTech" class="w-full h-full object-cover">
         </div>
         <h1 class="text-5xl font-extrabold mb-4">Welcome to AbsTech</h1>
         <p class="text-lg mb-6 max-w-3xl mx-auto">Explore our innovative projects designed to enhance your digital experience with cutting-edge solutions.</p>
@@ -62,20 +63,10 @@
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Projects</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Project Card 1 -->
+                
+                <!-- Project Card 1
                 <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
-                    <img src="./graphics/hbd1.jpg" alt="Project 1" class="w-full h-56 object-cover">
-                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
-                    <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
-                        <a href="project1.html" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
-                    </div>
-                    <div class="absolute bottom-0 p-4 text-sm text-gray-600 project-description">
-                        <p>This project focuses on developing advanced web solutions to enhance user interaction and performance.</p>
-                    </div>
-                </div>
-                <!-- Project Card 2 -->
-                <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
-                    <img src="/pics/abstech.jpg" alt="Project 2" class="w-full h-56 object-cover">
+                    <img src="./pics/abstech.jpg" alt="Project 2" class="w-full h-56 object-cover">
                     <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
                     <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
                         <a href="project2.html" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
@@ -83,30 +74,21 @@
                     <div class="absolute bottom-0 p-4 text-sm text-gray-600 project-description">
                         <p>A next-gen e-commerce platform designed to maximize conversions and user engagement with AI-based tools.</p>
                     </div>
+                </div>               
+                 -->
+                <!-- Project Card 2 -->
+                
+                <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
+                    <img src="./clients/nft.jpg" alt="NFTCLAIM" class="w-full h-56 object-cover">
+                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
+                    <div onclick="swal.fire({icon:'info',title:'Opps!',text:'This is an ongoing project, please check back later!'})" class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
+                        <a class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
+                    </div>
+                    <div class="absolute bottom-0 p-4 text-sm text-gray-600 project-description">
+                        <p>Website • Ongoing project that leverage cutting-edge tech to offer seamless online payment solutions for all business types.</p>
+                    </div>
                 </div>
                 <!-- Project Card 3 -->
-                <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
-                    <img src="./graphics/g1.jpg" alt="Project 3" class="w-full h-56 object-cover">
-                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
-                    <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
-                        <a href="project3.html" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
-                    </div>
-                    <div class="absolute bottom-0 p-4 text-sm text-gray-600 project-description">
-                        <p>Graphics design • An elegant, sparkling and stunning birthday flyer for Jimoh Ridwanullahi</p>
-                    </div>
-                </div>
-                <!-- Project Card 4 -->
-                <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
-                    <img src="./clients/nft.webp" alt="Project 4" class="w-full h-56 object-cover">
-                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
-                    <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
-                        <a href="project4.html" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
-                    </div>
-                    <div class="absolute bottom-0 p-4 text-sm text-gray-600 project-description">
-                        <p>Leveraging cutting-edge tech to offer seamless online payment solutions for all business types.</p>
-                    </div>
-                </div>
-                <!-- Project Card 5 -->
                 <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
                     <img src="./clients/adelina.webp" alt="Project 4" class="w-full h-56 object-cover">
                     <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
@@ -117,9 +99,9 @@
                         <p>Website • Leveraging cutting-edge tech to offer seamless hotel booking and house listing for rent</p>
                     </div>
                 </div>
-                <!-- Project 6 -->
+                <!-- Project 4 -->
                 <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
-                    <img src="./clients/pch.png" alt="Project 4" class="w-full h-56 object-cover">
+                    <img src="./clients/pch.png" alt="PCH" class="w-full h-56 object-cover">
                     <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
                     <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
                         <a href="https://publisher-clearing-house.netlify.app/" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
@@ -129,14 +111,35 @@
                     </div>
                 </div>
                 <!-- more project -->
+                
+                <!-- dynamic project -->
+                <div id="graphics" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <!-- Dynamic projects will be injected here -->
+</div>
+                <!-- dynamic project end -->
             </div>
         </div>
     </section>
+    
+    <!-- More at Home page -->
+    <div class="flex justify-center item-center text-center mb-2">
+        <a href="./index.html" class="fa-fade text-decoration-none text-blue-500">See More >></a></a></a>
+    </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6 text-center">
+    <footer class="gradient-bg text-white py-6 text-center">
         <p>&copy; <span id="year"></span> AbsTech. All Rights Reserved.</p>
-        <p>Follow us on <a href="https://twitter.com/AbsTech" class="underline text-indigo-400">Twitter</a>, <a href="https://facebook.com/AbsTech" class="underline text-indigo-400">Facebook</a>, <a href="https://youtube.com/@_Abstech" class="underline text-indigo-400">YouTube</a>, and <a href="https://instagram.com/AbsTech" class="underline text-indigo-400">Instagram</a>.</p>
+        <div class="social-icons">
+        <a href="https://wa.me/2348069764769?text=Hello%20Abstech,I%20need%20" target="_blank" class="text-white mx-2"><i class="mdi mdi-whatsapp"></i></a>
+        <a href="https://tiktok.com/@Broda_Sodiq" target="_blank" class="text-white mx-2"><i class="bx bxl-tiktok"></i></a>
+        <a href="https://snapchat.com/@Mr-Abubakar" target="_blank" class="text-white mx-2"><i class="bx bxl-snapchat"></i></a>
+        <a href="https://youtube.com/@_Abstech" target="_blank" class="text-white mx-2"><i class="fab fa-youtube"></i></a>
+        <a href="https://facebok.com/abdulfatai.sodiqtoyin" target="_blank" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/abdulfatai.sodiqtoyin" target="_blank" class="text-white mx-2"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://instagram.com/abdulfatai.sodiqtoyin" target="_blank" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+        <a href="http://t.me/AbsTechs" target="_blank" class="text-white mx-2"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://www.linkedin.com/in/abstech" target="_blank" class="text-white mx-2"><i class="fab fa-linkedin-in"></i></a>
+    </div>
     </footer>
     <!-- Bootstrap JS and dependencies -->
     <!-- jQuery -->
