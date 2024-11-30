@@ -121,4 +121,4 @@ document.getElementById('graphics').addEventListener('click', function (event) {
 
 // Call the function to render the graphics
 // render project dynamically
-         renderGraphics();
+document.addEventListener('DOMContentLLoaded',renderGraphics());        
