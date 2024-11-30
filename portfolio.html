@@ -3,10 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AbsTech Projects</title>
+    <title>AbsTech | Your Digital Partner</title>
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     -->    
+
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    
+    <!-- boxicon -->
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+        
+    <!-- material design icon -->
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet">
+    
+     <!-- iziToast CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
+    
+    <!-- Pace.js CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script>
+
     <style>
+        body{
+            font-family:"Poppins", Serif;
+            scroll-behavior: smooth;
+        }
         .gradient-bg {
             background: linear-gradient(to right, #000000, #0b2989, #154dff);
         }
@@ -23,12 +49,12 @@
     <!-- Hero Section -->
     <section class="gradient-bg text-white h-screen flex flex-col justify-center items-center text-center px-4">
         <div class="w-32 h-32 mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
-            <!-- Replace 'your-picture.jpg' with your actual image file path -->
-            <img src="/pics/abs.png" alt="AbsTech" class="w-full h-full object-cover">
+            <!-- profile picture-->
+            <img src="/pics/abstech.jpg" alt="AbsTech" class="w-full h-full object-cover">
         </div>
         <h1 class="text-5xl font-extrabold mb-4">Welcome to AbsTech</h1>
         <p class="text-lg mb-6 max-w-3xl mx-auto">Explore our innovative projects designed to enhance your digital experience with cutting-edge solutions.</p>
-        <a href="#projects" class="bg-white text-indigo-600 px-6 py-3 rounded-full shadow-lg text-lg transition duration-300 hover:bg-indigo-600 hover:text-white">Explore Projects</a>
+        <a onclick="toView('#projects')" class="bg-white text-indigo-600 px-6 py-3 rounded-full shadow-lg text-lg transition duration-300 hover:bg-indigo-600 hover:text-white text-decoration-none">Explore Projects</a>
     </section>
 
     <!-- Projects Section -->
@@ -38,7 +64,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 <!-- Project Card 1 -->
                 <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
-                    <img src="project1.jpg" alt="Project 1" class="w-full h-56 object-cover">
+                    <img src="./graphics/hbd1.jpg" alt="Project 1" class="w-full h-56 object-cover">
                     <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
                     <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
                         <a href="project1.html" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
@@ -49,7 +75,7 @@
                 </div>
                 <!-- Project Card 2 -->
                 <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
-                    <img src="project2.jpg" alt="Project 2" class="w-full h-56 object-cover">
+                    <img src="/pics/abstech.jpg" alt="Project 2" class="w-full h-56 object-cover">
                     <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
                     <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
                         <a href="project2.html" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
@@ -60,18 +86,18 @@
                 </div>
                 <!-- Project Card 3 -->
                 <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
-                    <img src="project3.jpg" alt="Project 3" class="w-full h-56 object-cover">
+                    <img src="./graphics/g1.jpg" alt="Project 3" class="w-full h-56 object-cover">
                     <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
                     <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
                         <a href="project3.html" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
                     </div>
                     <div class="absolute bottom-0 p-4 text-sm text-gray-600 project-description">
-                        <p>This innovative platform brings together social media engagement tools that help you grow and manage your online presence.</p>
+                        <p>Graphics design • An elegant, sparkling and stunning birthday flyer for Jimoh Ridwanullahi</p>
                     </div>
                 </div>
                 <!-- Project Card 4 -->
                 <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
-                    <img src="project4.jpg" alt="Project 4" class="w-full h-56 object-cover">
+                    <img src="./clients/nft.webp" alt="Project 4" class="w-full h-56 object-cover">
                     <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
                     <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
                         <a href="project4.html" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
@@ -80,25 +106,55 @@
                         <p>Leveraging cutting-edge tech to offer seamless online payment solutions for all business types.</p>
                     </div>
                 </div>
+                <!-- Project Card 5 -->
+                <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
+                    <img src="./clients/adelina.webp" alt="Project 4" class="w-full h-56 object-cover">
+                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
+                    <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
+                        <a href="https://adelina.netlify.app" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
+                    </div>
+                    <div class="absolute bottom-0 p-4 text-sm text-gray-600 project-description">
+                        <p>Website • Leveraging cutting-edge tech to offer seamless hotel booking and house listing for rent</p>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
+                    <img src="./clients/pch.png" alt="Project 4" class="w-full h-56 object-cover">
+                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
+                    <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
+                        <a href="https://publisher-clearing-house.netlify.app/" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
+                    </div>
+                    <div class="absolute bottom-0 p-4 text-sm text-white project-description">
+                        <p>Website • Publisher Clearing House campaign website for gifting and charity</p>
+                    </div>
+                </div>
+                <!-- more project -->
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6 text-center">
-        <p>&copy; 2024 AbsTech. All Rights Reserved.</p>
-        <p>Follow us on <a href="https://twitter.com/AbsTech" class="underline text-indigo-400">Twitter</a>, <a href="https://facebook.com/AbsTech" class="underline text-indigo-400">Facebook</a>, and <a href="https://instagram.com/AbsTech" class="underline text-indigo-400">Instagram</a>.</p>
+        <p>&copy; <span id="year"></span> AbsTech. All Rights Reserved.</p>
+        <p>Follow us on <a href="https://twitter.com/AbsTech" class="underline text-indigo-400">Twitter</a>, <a href="https://facebook.com/AbsTech" class="underline text-indigo-400">Facebook</a>, <a href="https://youtube.com/@_Abstech" class="underline text-indigo-400">YouTube</a>, and <a href="https://instagram.com/AbsTech" class="underline text-indigo-400">Instagram</a>.</p>
     </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
+    
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    
 
-    <script>
-        // JavaScript for toggling project description visibility
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const description = card.querySelector('.project-description');
-                description.style.display = (description.style.display === 'block') ? 'none' : 'block';
-            });
-        });
-    </script>
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- iziToast JS -->
+    <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+    <script src="./portfolio.js"></script>
 
 </body>
 </html>

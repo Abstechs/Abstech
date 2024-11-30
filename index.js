@@ -1,3 +1,26 @@
+document.addEventListener('DOMContentLoaded', function () {
+    // WhatsApp Contact
+    document.getElementById('whatsapp').addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value ? `*Name:* ${document.getElementById('name').value.trim()}\n` : '';
+        const email = document.getElementById('email').value ? `*Email:* ${document.getElementById('email').value.trim()}\n` : '';
+        const mess = document.getElementById('message').value?.trim() || 'Hi, *AbsTech*, I saw your portfolio and need your services for my business (please specify).';
+
+        const message = `${name}${email}${mess}`;
+        const allmessage = encodeURIComponent(message);
+
+        window.open(`https://wa.me/2348069764769?text=${allmessage}`, "_blank");
+    });
+
+    // Phone Call
+    document.getElementById('call').addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('tel:2348069764769', '_blank');
+    });
+
+
+
 document.querySelector('form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -62,3 +85,4 @@ function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
+});
