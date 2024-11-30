@@ -126,7 +126,7 @@ document.getElementById('graphics').addEventListener('click', function (event) {
 // PWA Features
 let deferredPrompt;
 window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
+  //e.preventDefault();
   deferredPrompt = e;
 
   const installButton = document.getElementById('installButton');

@@ -4,8 +4,8 @@ self.addEventListener('install', (event) => {
       return cache.addAll([
         '/',
         '/icons',
-        'icons/icon-512.png',
-        'icons/icon-192.png',
+        '/icons/icon-512.png',
+        '/icons/icon-192.png',
         '/index.html',
         '/portfolio.html',
         '/index.js',       
@@ -17,6 +17,7 @@ self.addEventListener('install', (event) => {
         '/clients',
         '/functions/sendMessage.js',
         '/pics',
+        '/pics/abs.png',
         '/graphics',
         '/graphics/g1.jpg',
         '/graphics/g2.jpg',

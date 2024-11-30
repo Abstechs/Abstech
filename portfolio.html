@@ -2,11 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
     <title>AbsTech | Your Digital Partner</title>
-    <meta property="og:title" content="AbsTech | Your Digital Partner" />
-    <meta property="og:description" content="AbsTech is a digital agency providing exceptional services in web development, graphic design, and digital marketing. We specialize in creating innovative and customized solutions to help businesses grow online." />
-    <link rel="manifest" href="/manifest.json">
+    <!-- Standard Meta Tags -->
+<meta name="description" content="AbsTech is a digital agency providing exceptional services in web development, graphic design, and digital marketing. We specialize in creating innovative and customized solutions to help businesses grow online.">
+<meta name="author" content="Abstech">
+
+<!-- Open Graph Tags -->
+<meta property="og:title" content="AbsTech | Your Digital Partner">
+<meta property="og:description" content="AbsTech is a digital agency providing exceptional services in web development, graphic design, and digital marketing. We specialize in creating innovative and customized solutions to help businesses grow online.">
+<meta property="og:image" content="https://abstechs.github.io/Abstech/icons/og-image.png">
+<meta property="og:url" content="https://abstechs.github.io/Abstech/icons/og-image.png">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AbsTech | Your Digital Partner">
+<meta name="twitter:description" content="AbsTech is a digital agency providing exceptional services in web development, graphic design, and digital marketing. We specialize in creating innovative and customized solutions to help businesses grow online.">
+<meta name="twitter:image" content="https://abstechs.github.io/Abstech/icons/og-image.png">
+<meta name="twitter:site" content="@AbsTech">
+    <link rel="manifest" href="./manifest.json">
     <!-- Tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -43,6 +58,7 @@
         body{
             font-family:"Poppins", Serif;
             scroll-behavior: smooth;
+            user-select:none;
         }
         .gradient-bg {
             background: linear-gradient(to right, #000000, #0b2989, #154dff);

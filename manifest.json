@@ -1,10 +1,13 @@
 {
-  "name": "AbsTech Dev",
+  "name": "AbsTech Developer",
   "short_name": "AbsTech",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
+  "orientation": "portrait-primary",
+  "description": "AbsTech Developer offers cutting-edge tools and services for tech enthusiasts.",
+  "categories": ["utilities", "productivity","business","programming","html","css","javascript","php","laravel","developer","website","web","digital","marketing"],
   "icons": [
     {
       "src": "/icons/icon-192.png",
@@ -14,6 +17,11 @@
     {
       "src": "/icons/icon-512.png",
       "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/pics/abs.png",
+      "sizes": "3264x3264",
       "type": "image/png"
     }
   ]
