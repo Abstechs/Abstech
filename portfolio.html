@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AbsTech | Your Digital Partner</title>
+    <meta property="og:title" content="AbsTech | Your Digital Partner" />
+    <meta property="og:description" content="AbsTech is a digital agency providing exceptional services in web development, graphic design, and digital marketing. We specialize in creating innovative and customized solutions to help businesses grow online." />
+    <link rel="manifest" href="/manifest.json">
+    <!-- Tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Link to Google Fonts -->
@@ -30,6 +34,12 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    }
         body{
             font-family:"Poppins", Serif;
             scroll-behavior: smooth;
@@ -55,28 +65,23 @@
         </div>
         <h1 class="text-5xl font-extrabold mb-4">Welcome to AbsTech</h1>
         <p class="text-lg mb-6 max-w-3xl mx-auto">Explore our innovative projects designed to enhance your digital experience with cutting-edge solutions.</p>
-        <a onclick="toView('#projects')" class="bg-white text-indigo-600 px-6 py-3 rounded-full shadow-lg text-lg transition duration-300 hover:bg-indigo-600 hover:text-white text-decoration-none">Explore Projects</a>
+        <a onclick="toView('#projects')" class="bg-white text-indigo-600 px-6 py-3 rounded-full shadow-lg text-lg transition duration-300 hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-300 hover:text-white text-decoration-none">Explore Projects</a>
+        
+        <br>
+        <button id="installButton" class="bg-white text-indigo-600 px-6 py-3 rounded-full shadow-lg text-lg transition duration-300 hover:bg-indigo-600 hover:text-white mb-4  focus:outline-none focus:ring-4 focus:ring-indigo-300" style="display:none;">Install App</button>
+        <button class="share bg-white hover:bg-indigo-600 hover:text-white text-indigo-600 text-2xl m-2 w-12 h-12 rounded-full p-2 shadow-md focus:outline-none focus:ring-4 focus:ring-indigo-300 text-decoration-none">
+  <i class="fas fa-share-alt"></i>
+</button>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="py-16">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Projects</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="graphics">
                 
-                <!-- Project Card 1
-                <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
-                    <img src="./pics/abstech.jpg" alt="Project 2" class="w-full h-56 object-cover">
-                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
-                    <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 text-white transition-all duration-300">
-                        <a href="project2.html" class="bg-indigo-600 px-6 py-3 rounded-full shadow-lg">View Project</a>
-                    </div>
-                    <div class="absolute bottom-0 p-4 text-sm text-gray-600 project-description">
-                        <p>A next-gen e-commerce platform designed to maximize conversions and user engagement with AI-based tools.</p>
-                    </div>
-                </div>               
-                 -->
-                <!-- Project Card 2 -->
+                
+                <!-- Project Card 1 -->
                 
                 <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
                     <img src="./clients/nft.jpg" alt="NFTCLAIM" class="w-full h-56 object-cover">
@@ -88,7 +93,7 @@
                         <p>Website • Ongoing project that leverage cutting-edge tech to offer seamless online payment solutions for all business types.</p>
                     </div>
                 </div>
-                <!-- Project Card 3 -->
+                <!-- Project Card 2 -->
                 <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
                     <img src="./clients/adelina.webp" alt="Project 4" class="w-full h-56 object-cover">
                     <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
@@ -99,7 +104,7 @@
                         <p>Website • Leveraging cutting-edge tech to offer seamless hotel booking and house listing for rent</p>
                     </div>
                 </div>
-                <!-- Project 4 -->
+                <!-- Project 3 -->
                 <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden project-card hover:scale-105 transition-all duration-300">
                     <img src="./clients/pch.png" alt="PCH" class="w-full h-56 object-cover">
                     <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-all duration-500"></div>
@@ -112,10 +117,16 @@
                 </div>
                 <!-- more project -->
                 
-                <!-- dynamic project -->
-                <div id="graphics" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <!-- Dynamic projects will be injected here -->
-</div>
+                <!-- dynamic project 
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">                   
+                </div>
+                 --------------
+                <span id="graphics">
+                    
+                </span>
+                -->
+                 <!-- dynamic project -->
+                
                 <!-- dynamic project end -->
             </div>
         </div>

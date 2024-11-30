@@ -4,12 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta property="og:title" content="AbsTech | Your Digital Partner" />
+    <meta property="og:description" content="AbsTech is a digital agency providing exceptional services in web development, graphic design, and digital marketing. We specialize in creating innovative and customized solutions to help businesses grow online." />
+    <link rel="manifest" href="/manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta name="theme-color" content="#2b2d2f" />
     <link rel="shortcut icon" href="./pics/abstech.png" type="image/x-icon" />
     <meta name="description" content="AbsTech provides exceptional web development, graphic design, and digital marketing services." />
     <meta name="keywords" content="AbsTech, web development, graphics design, digital marketing, technology, Nigeria" />
+    <!-- Tailwind -->
+    <!--  
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+     -->
 
     <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -65,6 +72,9 @@ https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" r
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" class="share">Share</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -74,6 +84,10 @@ https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" r
             <h1>Transforming Ideas Into Digital Realities</h1>
             <p>Web Development, Graphics Design, and Digital Marketing at your fingertips</p>
             <a href="#services" class="cta-btn">Explore Our Services</a>
+            <br>
+            <div class="flex justify-center items-center text-center mt-4" style="display: none;">
+            <button id="installButton">Install App</button>
+            </div>
         </div>
     </header>
 
@@ -177,9 +191,12 @@ https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" r
                     <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
                 </div>
                 <button type="submit" class="cta-btn">Send Message</button>
-                <button class="cta-btn-w"><i class="fab fa-whatsapp" id="whatsapp"></i></button>
+                <button class="cta-btn-w hover:bg-green-600 text-white shadow-md focus:outline-none focus:ring-2 focus:ring-green-300"><i class="fab fa-whatsapp" id="whatsapp"></i></button>
                 <button class="cta-btn-w"><i class="fas fa-phone-alt" id="call"></i></button>
             </form>
+            <button class="share btn btn-primary rounded-circle p-2 shadow-sm m-2" style="width: 48px; height: 48px;">
+  <i class="fas fa-share-alt"></i>
+</button>
         </div>
     </section>
 

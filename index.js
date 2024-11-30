@@ -1,3 +1,20 @@
+    if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(() => {
+  console.log('Browser up-to-date');
+  });
+}else{
+if (navigator.standalone || window.matchMedia('(display-mode: standalone)').matches) {
+  console.log('Thanks for installing Abstech app!');
+} else {
+  iziToast.info({
+          title: 'Browser Outdated',
+          message: 'Kindly update your browser to the latest version!',
+          position: 'topRight',
+        });
+  }
+
+}
+   
 document.addEventListener('DOMContentLoaded', function () {
     // WhatsApp Contact
     document.getElementById('whatsapp').addEventListener('click', (e) => {
@@ -86,3 +103,52 @@ function validateEmail(email) {
     return emailRegex.test(email);
 }
 });
+
+//PWA FEATURES 
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  const installButton = document.getElementById('installButton');
+  installButton.style.display = 'block';
+
+  installButton.addEventListener('click', () => {
+    deferredPrompt.prompt();
+
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        iziToast.success({
+          title: 'Downloading',
+          message: 'Abstech app will be installed shortly. Thanks for your interest!',
+          position: 'topRight',
+        });
+      } else {
+        iziToast.info({
+          title: 'Download Rejected',
+          message: 'You can always install the app in your browser settings!',
+          position: 'topRight',
+        });
+        installButton.style.display = 'none';
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
+//Web Share API
+document.querySelectorAll('.share').forEach(button => {
+  button.addEventListener('click', async function() {
+
+    // Web Share API
+    if (navigator.share) {
+      await navigator.share({
+        title: 'Discover Abstech: Your Ultimate Web Partner',
+        text: "Looking for a reliable and cost-effective way to elevate your online presence? Abstech delivers cutting-edge websites with unbeatable service at the most affordable prices. I'm personally using Abstech to grow my online business, and the results speak for themselves. Don't miss out—check out their portfolio and see how they can transform your digital future today!",
+        url: window.location.href,
+      });
+    }
+
+  });
+});
+

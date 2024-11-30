@@ -38,6 +38,13 @@ body {
     border-radius: 25px;
     text-decoration: none;
 }
+#installButton{
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+}
 .cta-btn-w {
     background-color: #27a51c;
     color: white;
