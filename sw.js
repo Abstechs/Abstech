@@ -11,6 +11,7 @@ self.addEventListener('install', (event) => {
         '/index.js',       
         '/portfolio.js',
         '/portfolio.html',
+        '/privacy-policy.html',
         '/icons/icon-192x192.png',
         '/icons/icon-512x512.png',
         '/graphics',
