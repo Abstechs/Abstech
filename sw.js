@@ -12,6 +12,8 @@ self.addEventListener('install', (event) => {
         '/portfolio.js',
         '/portfolio.html',
         '/privacy-policy.html',
+        'icon512_maskable.png',
+        'icon512_rounded.png',
         '/icons/icon-192x192.png',
         '/icons/icon-512x512.png',
         '/graphics',

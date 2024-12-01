@@ -1,28 +1,44 @@
 {
   "name": "AbsTech Developer",
   "short_name": "AbsTech",
-  "start_url": "/index.html",
+  "start_url": "https://abstech.netlify.app/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
-  "orientation": "portrait-primary",
-  "description": "AbsTech Developer offers cutting-edge tools and services for tech enthusiasts.",
+  "orientation": "portrait",
+  "dir":"auto",
+  "lang":"en-US",
+  "scope":"https://abstech.netlify.app/",
+  "description":"Looking for a reliable and cost-effective way to elevate your online presence? Abstech delivers cutting-edge websites with unbeatable service at the most affordable prices. I'm personally using Abstech to grow my online business, and the results speak for themselves. Don't miss out—check out their portfolio and see how they can transform your digital future today!",
+"id":"abstech.netlify.app",
   "categories": ["utilities", "productivity","business","programming","html","css","javascript","php","laravel","developer","website","web","digital","marketing"],
   "icons": [
     {
-      "src": "/icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
+      "purpose":"maskable",
+      "sizes":"512x512",
+      "src":"icon512_maskable.png",
+      "type":"image/png"
+      },
+    {
+      "purpose":"any",
+      "sizes":"512x512",
+      "src":"icon512_rounded.png",
+      "type":"image/png"
+      },
     {
       "src": "/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
       "src": "/pics/abs.png",
       "sizes": "3264x3264",
       "type": "image/png"
-    }
+    }        
   ]
 }
