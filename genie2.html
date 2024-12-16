@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormGenie Documentation</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- iziToast CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+    <script src="./genie.min.js" defer></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1c1e29, #0f1014);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #7e3af2, #9a40ffe3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .form-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a202c;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .form-dropdown:hover .form-dropdown-content {
+            display: block;
+        }
+
+        .form-dropdown-content a {
+            color: #e2e8f0;
+            padding: 8px 12px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .form-dropdown-content a:hover {
+            background-color: #4a5568;
+        }
+    </style>
+<script>    document.addEventListener('DOMContentLoaded',()=>{
+const navbarToggle = document.getElementById('navbar-toggle');
+    const navbarMenu = document.getElementById('navbar-menu');
+navbarMenu.classList = 'hidden';
+
+    navbarToggle.addEventListener('click', () => {
+      navbarMenu.classList.toggle('hidden');
+    });
+});
+</script>
+</head>
+
+<body>
+    <header class="bg-gray-900 py-5 shadow-lg">
+        <div class="container mx-auto px-5 flex justify-between items-center">
+            <h1 class="text-3xl font-bold gradient-text">FormGenie</h1>
+            <nav class="hidden md:flex gap-6 text-sm font-medium">
+                <a href="#overview" class="hover:text-purple-400">Overview</a>
+                <a href="#installation" class="hover:text-purple-400">Installation</a>
+                <a href="#usage" class="hover:text-purple-400">Usage</a>
+                <a href="#features" class="hover:text-purple-400">Features</a>
+                <a href="#examples" class="hover:text-purple-400">Examples</a>
+            </nav>
+            <button class="md:hidden text-white" id="navbar-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden sm:hidden" id="navbar-menu">
+            <nav class="bg-gray-900 text-sm font-medium">
+                <a href="#overview" class="block py-2 px-4 hover:bg-gray-700">Overview</a>
+                <a href="#installation" class="block py-2 px-4 hover:bg-gray-700">Installation</a>
+                <a href="#usage" class="block py-2 px-4 hover:bg-gray-700">Usage</a>
+                <a href="#features" class="block py-2 px-4 hover:bg-gray-700">Features</a>
+                <a href="#examples" class="block py-2 px-4 hover:bg-gray-700">Examples</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-5 mt-10 space-y-16">
+        <section id="overview">
+            <h2 class="text-4xl font-bold gradient-text">Overview</h2>
+            <p class="mt-4 text-gray-300">
+                FormGenie is a lightweight, AI-powered form generation library created by <span class="text-purple-400 font-bold">AbsTech</span>. It simplifies dynamic and customizable form creation, offering flexibility, responsiveness, and beauty in one package. Tailored for developers who value efficiency and elegance, FormGenie is perfect for modern web applications.
+            </p>
+        </section>
+
+        <section id="installation">
+            <h2 class="text-4xl font-bold gradient-text">Installation</h2>
+            <p class="mt-4 text-gray-300">You can integrate FormGenie easily into your project with the following steps:</p>
+            
+            <pre class="bg-gray-800 p-4 rounded-md text-sm text-gray-200 overflow-x-auto mt-4">&lt;script src="https://cdn.jsdelivr.net/gh/Abstechs/Abstech@main/formgenie.min.js"&gt;&lt;/script&gt;</pre>
+            <p class="mt-4 text-gray-300">
+                Ensure that <span class="text-purple-400">jQuery</span> is included in your project, above your FormGenie sctipt tag. FormGenie depends on it to function, other library will be fetch automatically!.
+            </p>
+            <p class="mt-4 text-gray-300">You can copy this jquery and add it to your file at the head section, then add FormGenie script below it.</p>
+            
+            <pre class="bg-gray-800 p-4 rounded-md text-sm text-gray-200 overflow-x-auto mt-4">&lt;script src="https://code.jquery.com/jquery-3.6.0.min.js"&gt;&lt;/script&gt;</pre>
+        </section>
+
+        <section id="usage">
+            <h2 class="text-4xl font-bold gradient-text">Usage</h2>
+            <p class="mt-4 text-gray-300">
+                Initialize FormGenie and create forms dynamically using the following code:
+            </p>
+            <pre class="bg-gray-800 p-4 rounded-md text-sm text-gray-200 overflow-x-auto mt-4">
+FormGenie.create({
+  container: "#form-container",
+  fields: [
+    { name: "name", type: "text", placeholder: "Full Name", required: true },
+    { name: "email", type: "email", placeholder: "Email Address", required: true },
+    { name: "password", type: "password", placeholder: "Password", required: true },
+    { name: "confirmPassword", type: "password", placeholder: "Confirm Password", required: true }
+  ],
+  theme: "tailwind",
+  submitText: "Register"
+});
+            </pre>
+            <p class="mt-4 text-gray-300">
+                The <span class="text-purple-400">container</span> should be a valid selector for your form's parent element.
+            </p>
+        </section>
+
+        <section id="features">
+            <h2 class="text-4xl font-bold gradient-text">Features</h2>
+            <ul class="mt-4 text-gray-300 space-y-2">
+                <li>✔ AI-powered form validation for email, phone, and password matching.</li>
+                <li>✔ Fully customizable fields with support for custom attributes.</li>
+                <li>✔ Multiple field types, including checkboxes, radios, and selects.</li>
+                <li>✔ Default styling using Tailwind CSS or Bootstrap.</li>
+                <li>✔ Responsive design for all screen sizes.</li>
+            </ul>
+        </section>
+
+        <section id="examples">
+            <h2 class="text-4xl font-bold gradient-text">Examples</h2>
+            <div id="example-section-1">
+                <!-- Example 1: Basic Form -->
+                <h3 class="text-2xl font-semibold mt-8">Example 1: Basic Form</h3>
+                <p class="mt-4 text-gray-300">Here’s an example of a basic registration form:</p>
+                <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 gap-6">
+                    <div class="flex flex-col w-full md:w-1/2 space-y-4">
+                        <div class="flex justify-between">
+                            <button data-clipboard-target="#code-example-1" class="bg-purple-500 hover:bg-purple-700 text-white py-2 px-4 rounded">Copy Code</button>
+                            <button onclick="reloadForm('form-container-1', 'code-example-1')" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">Reload Preview</button>
+                        </div>                        
+                        <div id="code-example-1" class="bg-white-800 p-4 rounded-md text-sm text-gray-200 overflow-x-auto mt-4">
+                            FormGenie.create({
+                                container: "#form-container-1",
+                                fields: [
+                                    { name: "username", type: "text", placeholder: "Username", required: true },
+                                    { name: "email", type: "email", placeholder: "Email", required: true },
+                                    { name: "password", type: "password", placeholder: "Password", required: true },
+                                    { name: "confirmPassword", type: "password", placeholder: "Confirm Password", required: true }
+                                ],
+                                submitText: "Sign Up",
+                                theme: "tailwind"
+                            });
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-gray-300">#form-container-1</h3>
+                        <div id="form-container-1" class="bg-gray-800 p-6 rounded-md"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="example-section-2">
+                <!-- Example 2: Form with Select -->
+                <h3 class="text-2xl font-semibold mt-8">Example 2: Form with Select</h3>
+                <p class="mt-4 text-gray-300">Here’s an example of a form that includes a select field for choosing a country:</p>
+                <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 gap-6">
+                    <div class="flex flex-col w-full md:w-1/2 space-y-4">
+                        <div class="flex justify-between">
+                            <button data-clipboard-target="#code-example-2" class="bg-purple-500 hover:bg-purple-700 text-white py-2 px-4 rounded">Copy Code</button>
+                            <button onclick="reloadForm('form-container-2', 'code-example-2')" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">Reload Preview</button>
+                        </div>
+                        <div id="code-example-2" class="bg-gray-800 p-4 rounded-md text-sm text-gray-200 overflow-x-auto mt-4">
+                            FormGenie.create({
+  container: "#form-container-2",
+  fields: [
+    { name: "username", type: "text", placeholder: "Username", required: true },
+    { name: "email", type: "email", placeholder: "Email", required: true },
+    {
+      name: "country",
+      type: "select",
+      options: [
+        { value: "USA", label: "USA" },
+        { value: "Canada", label: "Canada" },
+        { value: "UK", label: "UK" },
+        { value: "Australia", label: "Australia" }
+      ],
+      required: true
+    },
+    { name: "password", type: "password", placeholder: "Password", required: true },
+    { name: "confirmPassword", type: "password", placeholder: "Confirm Password", required: true }
+  ],
+  submitText: "Register",
+  theme: "tailwind"
+});
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-gray-300">#form-container-2</h3>
+                        <div id="form-container-2" class="bg-gray-800 p-6 rounded-md"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="example-section-3">
+                <!-- Example 3: Form with Radio Buttons -->
+                <h3 class="text-2xl font-semibold mt-8">Example 3: Form with Radio Buttons</h3>
+                <p class="mt-4 text-gray-300">Here’s an example of a form that includes radio buttons for selecting gender:</p>
+                <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 gap-6">
+                    <div class="flex flex-col w-full md:w-1/2 space-y-4">
+                        <div class="flex justify-between">
+                            <button data-clipboard-target="#code-example-3" class="bg-purple-500 hover:bg-purple-700 text-white py-2 px-4 rounded">Copy Code</button>
+                            <button onclick="reloadForm('form-container-3', 'code-example-3')" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">Reload Preview</button>
+                        </div>
+                        <div id="code-example-3" class="bg-gray-800 p-4 rounded-md text-sm text-gray-200 overflow-x-auto mt-4">
+                            FormGenie.create({
+    container: "#form-container-3",
+    fields: [
+        { name: "username", type: "text", placeholder: "Username", required: true },
+        { name: "email", type: "email", placeholder: "Email", required: true },
+        {
+            name: "gender", 
+            type: "radio", 
+            options: [
+                { label: "Male", value: "male" },
+                { label: "Female", value: "female" },
+                { label: "Other", value: "other" }
+            ], 
+            required: true
+        },
+        { name: "password", type: "password", placeholder: "Password", required: true },
+        { name: "confirmPassword", type: "password", placeholder: "Confirm Password", required: true }
+    ],
+    submitText: "Sign Up",
+    theme: "tailwind"
+});
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-gray-300">#form-container-3</h3>
+                        <div id="form-container-3" class="bg-gray-800 p-6 rounded-md"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 👋👋👋👋 -->
+            <div id="example-section-4">
+    <!-- Example 4: Form with Input Validation and Custom Styling -->
+    <h3 class="text-2xl font-semibold mt-8">Example 4: Form with Input Validation and Custom Styling</h3>
+    <p class="mt-4 text-gray-300">Here’s an example of a form with input validation and custom styling applied:</p>
+    <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 gap-6">
+        <div class="flex flex-col w-full md:w-1/2 space-y-4">
+            <div class="flex justify-between">
+                <button data-clipboard-target="#code-example-4" class="bg-purple-500 hover:bg-purple-700 text-white py-2 px-4 rounded">Copy Code</button>
+                <button onclick="reloadForm('form-container-4', 'code-example-4')" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">Reload Preview</button>
+            </div>
+            <div id="code-example-4" class="bg-gray-800 p-4 rounded-md text-sm text-gray-200 overflow-x-auto mt-4">
+                FormGenie.create({
+                    container: "#form-container-4",
+                    fields: [
+                        { name: "username", type: "text", placeholder: "Username", required: true, class: "border-2 border-blue-500 p-2 rounded" },
+                        { name: "email", type: "email", placeholder: "Email Address", required: true, class: "border-2 border-blue-500 p-2 rounded" },
+                    ],
+                    submitText: "Submit",
+                    validateOnSubmit: true,
+                    alertLibrary: "iziToast",
+                    theme: "tailwind"
+                });
+            </div>
+        </div>
+        <div class="w-full md:w-1/2">
+            <h3 class="text-gray-300">#form-container-1</h3>
+            <div id="form-container-4" class="bg-gray-800 p-6 rounded-md"></div>
+        </div>
+    </div>
+</div>
+
+<div id="example-section-5">
+    <!-- Example 5: Form with Custom Error Messages -->
+    <h3 class="text-2xl font-semibold mt-8">Example 5: Form with Custom Error Messages</h3>
+    <p class="mt-4 text-gray-300">Here’s an example of a form with custom error messages for validation:</p>
+    <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 gap-6">
+        <div class="flex flex-col w-full md:w-1/2 space-y-4">
+            <div class="flex justify-between">
+                <button data-clipboard-target="#code-example-5" class="bg-purple-500 hover:bg-purple-700 text-white py-2 px-4 rounded">Copy Code</button>
+                <button onclick="reloadForm('form-container-5', 'code-example-5')" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">Reload Preview</button>
+            </div>
+            <div id="code-example-5" class="bg-gray-800 p-4 rounded-md text-sm text-gray-200 overflow-x-auto mt-4">
+                FormGenie.create({
+                    container: "#form-container-5",
+                    fields: [
+                        { name: "email", type: "email", placeholder: "Email Address", required: true },
+                        { name: "password", type: "password", placeholder: "Password", required: true }
+                    ],
+                    submitText: "Submit",
+                    validateOnSubmit: true,
+                    alertLibrary: "iziToast",
+                    theme: "tailwind"
+                });
+            </div>
+        </div>
+        <div class="w-full md:w-1/2">
+            <h3 class="text-gray-300">#form-container-5 (white background)</h3>
+            <div id="form-container-5" class="bg-white p-6 rounded-md shadow-md"></div>
+        </div>
+    </div>
+</div>
+
+<div id="example-section-6">
+    <!-- Example 6: Form with File Upload -->
+    <h3 class="text-2xl font-semibold mt-8">Example 6: Form with File Upload</h3>
+    <p class="mt-4 text-gray-300">Here’s an example of a form with a file upload field and FontAwesome icon:</p>
+    <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 gap-6">
+        <div class="flex flex-col w-full md:w-1/2 space-y-4">
+            <div class="flex justify-between">
+                <button data-clipboard-target="#code-example-6" class="bg-purple-500 hover:bg-purple-700 text-white py-2 px-4 rounded">Copy Code</button>
+                <button onclick="reloadForm('form-container-6', 'code-example-6')" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">Reload Preview</button>
+            </div>
+            <div id="code-example-6" class="bg-gray-800 p-4 rounded-md text-sm text-gray-200 overflow-x-auto mt-4">
+                FormGenie.create({
+                    container: "#form-container-6",
+                    fields: [
+                        { name: "profilePic", label: "&lt;i class='fas fa-upload'>&lt;/i&gt; Profile Picture", type: "file", required: true }
+                    ],
+                    submitText: "Upload",
+                    theme: "tailwind"
+                });
+            </div>
+        </div>
+        <div class="w-full md:w-1/2">
+            <h3 class="text-gray-300">#form-container-6</h3>
+            <div id="form-container-6" class="bg-gray-800 p-6 rounded-md"></div>
+        </div>
+    </div>
+</div>
+
+<div id="example-section-7">
+    <!-- Example 7: Form with Confirmation Alert -->
+    <h3 class="text-2xl font-semibold mt-8">Example 7: Form with Confirmation Alert</h3>
+    <p class="mt-4 text-gray-300">Here’s an example of a form with a confirmation alert using iziToast:</p>
+    <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 gap-6">
+        <div class="flex flex-col w-full md:w-1/2 space-y-4">
+            <div class="flex justify-between">
+                <button data-clipboard-target="#code-example-7" class="bg-purple-500 hover:bg-purple-700 text-white py-2 px-4 rounded">Copy Code</button>
+                <button onclick="reloadForm('form-container-7', 'code-example-7')" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded">Reload Preview</button>
+            </div>
+            <div id="code-example-7" class="bg-gray-800 p-4 rounded-md text-sm text-gray-200 overflow-x-auto mt-4">
+                FormGenie.create({
+  container: "#form-container-7",
+  fields: [
+    { name: "name", type: "text", placeholder: "Your Name", required: true },
+    { name: "email", type: "email", placeholder: "Email Address", required: true },
+  ],
+  submitText: "Submit",
+  onSuccess: function (formData) {
+    iziToast.success({
+      title: "Success!",
+      message: "Your form has been submitted successfully!",
+      position: "topRight",
+    });
+
+    console.log("Form Data Submitted:", formData);
+  },
+  theme: "tailwind",
+});
+            </div>
+        </div>
+        <div class="w-full md:w-1/2">
+            <h3 class="text-gray-300">#form-container-7</h3>
+            <div id="form-container-7" class="bg-white shadow-md p-6 rounded-md"></div>
+        </div>
+    </div>
+</div>
+            <!-- 👋👋👋👋 -->
+            
+            
+            
+            
+        </section>
+    </main>
+
+      <footer class="bg-gray-900 py-6 mt-10 text-center text-gray-300">
+    <p>&copy; 2024 FormGenie by <span class="text-purple-400 font-bold">AbsTech</span>. All rights reserved.</p>
+  </footer>
+
+    <script>
+        // Function to reload the form preview
+        function reloadForm(containerId, codeId) {
+            const code = document.getElementById(codeId).innerText;
+            eval(code); // This will re-initialize the form with updated code
+        }
+
+        // Enable clipboard copying for each example
+        new ClipboardJS('.bg-purple-500');
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- iziToast JS -->
+    <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+</body>
+
+</html>

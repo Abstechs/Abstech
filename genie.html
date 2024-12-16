@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FormGenie Documentation</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./genie.js"></script>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #1c1e29, #0f1014);
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+    }
+    .gradient-text {
+      background: linear-gradient(to right, #7e3af2, #9a40ffe3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .form-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .form-dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #1a202c;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .form-dropdown:hover .form-dropdown-content {
+      display: block;
+    }
+    .form-dropdown-content a {
+      color: #e2e8f0;
+      padding: 8px 12px;
+      text-decoration: none;
+      display: block;
+    }
+    .form-dropdown-content a:hover {
+      background-color: #4a5568;
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-gray-900 py-5 shadow-lg">
+    <div class="container mx-auto px-5 flex justify-between items-center">
+      <h1 class="text-3xl font-bold gradient-text">FormGenie</h1>
+      <nav class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="#overview" class="hover:text-purple-400">Overview</a>
+        <a href="#installation" class="hover:text-purple-400">Installation</a>
+        <a href="#usage" class="hover:text-purple-400">Usage</a>
+        <a href="#features" class="hover:text-purple-400">Features</a>
+        <a href="#examples" class="hover:text-purple-400">Examples</a>
+      </nav>
+      <button class="md:hidden text-white" id="navbar-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="md:hidden sm:hidden" id="navbar-menu">
+      <nav class="bg-gray-900 text-sm font-medium">
+        <a href="#overview" class="block py-2 px-4 hover:bg-gray-700">Overview</a>
+        <a href="#installation" class="block py-2 px-4 hover:bg-gray-700">Installation</a>
+        <a href="#usage" class="block py-2 px-4 hover:bg-gray-700">Usage</a>
+        <a href="#features" class="block py-2 px-4 hover:bg-gray-700">Features</a>
+        <a href="#examples" class="block py-2 px-4 hover:bg-gray-700">Examples</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-5 mt-10 space-y-16">
+    <section id="overview">
+      <h2 class="text-4xl font-bold gradient-text">Overview</h2>
+      <p class="mt-4 text-gray-300">
+        FormGenie is a lightweight, AI-powered form generation library created by <span class="text-purple-400 font-bold">AbsTech</span>. It simplifies dynamic and customizable form creation, offering flexibility, responsiveness, and beauty in one package. Tailored for developers who value efficiency and elegance, FormGenie is perfect for modern web applications.
+      </p>
+    </section>
+
+    <section id="installation">
+      <h2 class="text-4xl font-bold gradient-text">Installation</h2>
+      <p class="mt-4 text-gray-300">You can integrate FormGenie easily into your project with the following steps:</p>
+      <pre class="bg-gray-800 p-4 rounded-md text-sm text-gray-200 overflow-x-auto mt-4">
+&lt;script src="formgenie.min.js"&gt;&lt;/script&gt;
+      </pre>
+      <p class="mt-4 text-gray-300">
+        Ensure that <span class="text-purple-400">jQuery</span> is included in your project. FormGenie automatically fetches it if not available.
+      </p>
+    </section>
+
+    <section id="usage">
+      <h2 class="text-4xl font-bold gradient-text">Usage</h2>
+      <p class="mt-4 text-gray-300">
+        Initialize FormGenie and create forms dynamically using the following code:
+      </p>
+      <pre class="bg-gray-800 p-4 rounded-md text-sm text-gray-200 overflow-x-auto mt-4">
+FormGenie.create({
+  container: "#form-container",
+  fields: [
+    { name: "name", type: "text", placeholder: "Full Name", required: true },
+    { name: "email", type: "email", placeholder: "Email Address", required: true },
+    { name: "password", type: "password", placeholder: "Password", required: true },
+    { name: "confirmPassword", type: "password", placeholder: "Confirm Password", required: true }
+  ],
+  theme: "tailwind",
+  submitText: "Register"
+});
+      </pre>
+      <p class="mt-4 text-gray-300">
+        The <span class="text-purple-400">container</span> should be a valid selector for your form's parent element.
+      </p>
+    </section>
+
+    <section id="features">
+      <h2 class="text-4xl font-bold gradient-text">Features</h2>
+      <ul class="mt-4 text-gray-300 space-y-2">
+        <li>✔ AI-powered form validation for email, phone, and password matching.</li>
+        <li>✔ Fully customizable fields with support for custom attributes.</li>
+        <li>✔ Multiple field types, including checkboxes, radios, and selects.</li>
+        <li>✔ Default styling using Tailwind CSS or Bootstrap.</li>
+        <li>✔ Responsive design for all screen sizes.</li>
+        <li>✔ Animated field labels and inputs for a modern, intuitive experience.</li>
+        <li>✔ Option to add 'genie' prefixed animations for additional customization.</li>
+      </ul>
+    </section>
+
+    <section id="examples">
+      <h2 class="text-4xl font-bold gradient-text">Examples</h2>
+      <p class="mt-4 text-gray-300">
+        Here's an example of a basic registration form generated with FormGenie:
+      </p>
+      <div id="form-container" class="bg-gray-800 p-6 rounded-md mt-4"></div>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          FormGenie.create({
+            container: "#form-container",
+            fields: [
+              { name: "username", type: "text", placeholder: "Username", required: true },
+              { name: "email", type: "email", placeholder: "Email", required: true },
+              { name: "password", type: "password", placeholder: "Password", required: true },
+              { name: "confirmPassword", type: "password", placeholder: "Confirm Password", required: true },
+              { name: "gender", type: "radio", options: [
+                { label: "Male", value: "male" },
+                { label: "Female", value: "female" }
+              ]}
+            ],
+            submitText: "Sign Up",
+            theme: "tailwind"
+          });
+        });
+      </script>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 py-6 mt-10 text-center text-gray-300">
+    <p>© 2024 FormGenie by <span class="text-purple-400 font-bold">AbsTech</span>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const navbarMenu = document.getElementById('navbar-menu');
+
+    navbarToggle.addEventListener('click', () => {
+      navbarMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

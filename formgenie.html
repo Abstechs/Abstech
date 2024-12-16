@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormGenie Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="./genie.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Madimi+One&family=Titan+One&family=Whisper&display=swap');
+.titan-one-font{
+  font-family: "Titan One", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  }
+  .madimi-font{
+  font-family: "Madimi One", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  }
+  .whisper-font{
+  font-family: "whisper", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  }
+  .jost-font, body {
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+:root {
+  color-scheme: light dark;
+}
+body{
+font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  background-color: light-dark(#FFF, #000);
+  color: light-dark(#333, #ccc);
+}
+        .section {
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background-color: #f9fafb;
+            border-radius: 8px;
+        }
+        .example-code {
+            background-color: #f1f5f9;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: "Courier New", Courier, monospace;
+            overflow:auto;
+            margin-top:5px;
+        }
+        .preview-container {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-blue-600 text-white text-center py-6">
+        <h1 class="text-3xl font-bold">FormGenie Documentation</h1>
+        <p>A powerful form creation and customization tool for your web applications</p>
+    </header>
+
+    <div class="container mx-auto mt-10">
+        <!-- Introduction Section -->
+        <div class="section">
+            <h2 class="text-2xl font-bold mb-4">Introduction</h2>
+            <p>FormGenie is a flexible and easy-to-use JavaScript library that allows you to quickly generate and customize forms for your web applications. Whether you need simple input forms or complex forms with custom validation, FormGenie has you covered.</p>
+        </div>
+
+        <!-- Installation Section -->
+        <div class="section">
+            <h2 class="text-2xl font-bold mb-4">Installation</h2>
+            <p>To get started with FormGenie, you can  include it via CDN link and include the other libraries by following the step below</p>
+
+            <h3 class="text-xl font-semibold mb-2">Step 1: Adding CDN</h3>
+            <pre class="example-code">&lt;script src="https://code.jquery.com/jquery-3.6.4.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/Abstechs/Abstech@main/formgenie.min.js"&gt;&lt;/script&gt;
+            </pre>
+            
+            <h3 class="text-xl font-semibold mb-2">Step 2: Other libraries</h3>
+            <p>FormGenie utilizes jQuery internally and tailwind CSS for styling by default, you can change it to bootstrap (optional). No need if your project already included any of the library. These are the links to includes in your projects:</p>
+            <pre class="example-code">
+&lt;!-- Add these to the head tag --&gt:
+&lt;-- Tailwind CSS --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"&gt;
+&lt;--  Toast library --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css"&gt;
+
+&lt;!-- Add these before the closing body tag &lt;/body&gt; --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"&gt;&lt;/script&gt;
+    
+&lt;!-- iziToast JS --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"&gt;&lt;/script&gt;
+            </pre>
+            
+            <h3 class="text-xl font-semibold mb-2">Step 3: Local Installation</h3>
+            <p>If you prefer to download FormGenie, simply download the library from <a href="https://github.com/Abstech/formgenie.min.js" class="text-blue-500">FormGenie GitHub</a>, then include it in your project by adding this:</p>
+            <pre class="example-code">&lt;script src="path/to/your/formgenie.min.js" defer&gt;&lt;/script&gt;</pre>
+        </div>
+
+        <!-- Features Section -->
+        <div class="section">
+            <h2 class="text-2xl font-bold mb-4">Features</h2>
+            <ul class="list-disc pl-6">
+                <li>Supports various input types (text, email, password, select, etc.)</li>
+                <li>Customizable form structure and layout</li>
+                <li>Built-in validation for common fields (email, required fields, etc.)</li>
+                <li>Customizable themes (Tailwind CSS, Bootstrap, etc.)</li>
+                <li>Dynamic form submission with AJAX support</li>
+                <li>Easy integration with existing projects</li>
+                <li>Support for custom form field classes and styles</li>
+            </ul>
+        </div>
+
+        <!-- Usage Section -->
+        <div class="section">
+            <h2 class="text-2xl font-bold mb-4">Usage</h2>
+            <p>FormGenie is very easy to use. Simply call the <code>FormGenie.create()</code> method, passing in the required configuration options.</p>
+
+            <h3 class="text-xl font-semibold mb-2">Basic Usage Example</h3>
+            <pre class="example-code">
+FormGenie.create({
+    container: "#form-container",  // The container where the form will be rendered
+    fields: [
+        { name: "fullName", label: "Full Name", type: "text", required: true, placeholder: "Enter your full name" },
+        { name: "email", label: "Email Address", type: "email", required: true, placeholder: "Enter your email" }
+    ],
+    submitText: "Submit",  // Text on the submit button
+});
+            </pre>
+        </div>
+
+        <!-- Examples Section -->
+        <div class="section">
+            <h2 class="text-2xl font-bold mb-4">Examples</h2>
+
+            <!-- Example 1: Basic Form -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold">Example 1: Basic Form</h3>
+                <div class="preview-container">
+                    <div id="form-container-1"></div>
+                </div>
+                <pre class="example-code">
+FormGenie.create({
+    container: "#form-container-1",
+    fields: [
+        { name: "fullName", label: "Full Name", type: "text", required: true, placeholder: "Enter your full name" },
+        { name: "email", label: "Email Address", type: "email", required: true, placeholder: "Enter your email" }
+    ],
+    submitText: "Submit"
+});
+                </pre>
+            </div>
+
+            <!-- Example 2: Form with Custom Validation -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold">Example 2: Form with Custom Validation</h3>
+                <div class="preview-container">
+                    <div id="form-container-2"></div>
+                </div>
+                <pre class="example-code">
+FormGenie.create({
+    container: "#form-container-2",
+    fields: [
+        {
+            name: "email",
+            label: "Email Address",
+            type: "email",
+            required: true,
+            placeholder: "Enter your email",
+            validate: function(value) {
+                return /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(value);  // Custom email validation
+            }
+        }
+    ],
+    submitText: "Submit"
+});
+                </pre>
+            </div>
+
+            <!-- Example 3: Form with Select and Radio Fields -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold">Example 3: Form with Select and Radio Fields</h3>
+                <div class="preview-container">
+                    <div id="form-container-3"></div>
+                </div>
+                <pre class="example-code">
+FormGenie.create({
+    container: "#form-container-3",
+    fields: [
+        { name: "fullName", label: "Full Name", type: "text", required: true, placeholder: "Enter your full name" },
+        {
+            name: "gender",
+            label: "Gender",
+            type: "select",
+            required: true,
+            options: [
+                { value: "male", label: "Male" },
+                { value: "female", label: "Female" },
+                { value: "other", label: "Other" }
+            ]
+        },
+        {
+            name: "preferredContact",
+            label: "Preferred Contact Method",
+            type: "radio",
+            required: true,
+            options: [
+                { value: "email", label: "Email" },
+                { value: "phone", label: "Phone" }
+            ]
+        }
+    ],
+    submitText: "Submit"
+});
+                </pre>
+            </div>
+
+            <!-- Example 4: Form with Custom Themes -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold">Example 4: Form with Custom Themes</h3>
+                <div class="preview-container">
+                    <div id="form-container-4"></div>
+                </div>
+                <pre class="example-code">
+FormGenie.create({
+    container: "#form-container-4",
+    fields: [
+        { name: "fullName", label: "Full Name", type: "text", required: true, placeholder: "Enter your full name" }
+    ],
+    theme: "tailwind",  // Apply Tailwind CSS theme
+    submitText: "Submit"
+});
+                </pre>
+            </div>
+
+            <!-- Example 5: Form with AJAX Submission -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold">Example 5: Form with AJAX Submission</h3>
+                <div class="preview-container">
+                    <div id="form-container-5"></div>
+                </div>
+                <pre class="example-code">
+FormGenie.create({
+    container: "#form-container-5",
+    fields: [
+        { name: "fullName", label: "Full Name", type: "text", required: true, placeholder: "Enter your full name" },
+        { name: "email", label: "Email Address", type: "email", required: true, placeholder: "Enter your email" }
+            ],
+    submitText: "Submit",
+    onSubmit: function(data) {
+        $.ajax({
+            url: "/submitForm",
+            method: "POST",
+            data: data,
+            success: function(response) {
+                alert("Form submitted successfully!");
+            },
+            error: function(error) {
+                alert("Error submitting form.");
+            }
+        });
+    }
+});
+                </pre>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="bg-blue-600 text-white text-center py-6 mt-10">
+            <p>&copy; 2024 AbsTech. All rights reserved. <br>
+            For more information, visit the <a href="https://github.com/Abstechs/genie2.html" class="text-white font-bold">FormGenie GitHub</a> page.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize forms
+        $(document).ready(function() {
+            // Example 1: Basic Form
+            FormGenie.create({
+                container: "#form-container-1",
+                fields: [
+                    { name: "fullName", label: "Full Name", type: "text", required: true, placeholder: "Enter your full name" },
+                    { name: "email", label: "Email Address", type: "email", required: true, placeholder: "Enter your email" }
+                ],
+                submitText: "Submit"
+            });
+
+            // Example 2: Form with Custom Validation
+            FormGenie.create({
+                container: "#form-container-2",
+                fields: [
+                    {
+                        name: "email",
+                        label: "Email Address",
+                        type: "email",
+                        required: true,
+                        placeholder: "Enter your email",
+                        validate: function(value) {
+                            return /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(value);  // Custom email validation
+                        }
+                    }
+                ],
+                submitText: "Submit"
+            });
+
+            // Example 3: Form with Select and Radio Fields
+            FormGenie.create({
+                container: "#form-container-3",
+                fields: [
+                    { name: "fullName", label: "Full Name", type: "text", required: true, placeholder: "Enter your full name" },
+                    {
+                        name: "gender",
+                        label: "Gender",
+                        type: "select",
+                        required: true,
+                        options: [
+                            { value: "male", label: "Male" },
+                            { value: "female", label: "Female" },
+                            { value: "other", label: "Other" }
+                        ]
+                    },
+                    {
+                        name: "preferredContact",
+                        label: "Preferred Contact Method",
+                        type: "radio",
+                        required: true,
+                        options: [
+                            { value: "email", label: "Email" },
+                            { value: "phone", label: "Phone" }
+                        ]
+                    }
+                ],
+                submitText: "Submit"
+            });
+
+            // Example 4: Form with Custom Themes
+            FormGenie.create({
+                container: "#form-container-4",
+                fields: [
+                    { name: "fullName", label: "Full Name", type: "text", required: true, placeholder: "Enter your full name" }
+                ],
+                theme: "tailwind",  // Apply Tailwind CSS theme
+                submitText: "Submit"
+            });
+
+            // Example 5: Form with AJAX Submission
+            FormGenie.create({
+                container: "#form-container-5",
+                fields: [
+                    { name: "fullName", label: "Full Name", type: "text", required: true, placeholder: "Enter your full name" },
+                    { name: "email", label: "Email Address", type: "email", required: true, placeholder: "Enter your email" }
+                ],
+                submitText: "Submit",
+                onSubmit: function(data) {
+                    $.ajax({
+                        url: "/submitForm",
+                        method: "POST",
+                        data: data,
+                        success: function(response) {
+                            alert("Form submitted successfully!");
+                        },
+                        error: function(error) {
+                            alert("Error submitting form.");
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
