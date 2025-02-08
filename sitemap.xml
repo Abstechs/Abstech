@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://abstech.netlify.app/index.html</loc>
-    <lastmod>2024-12-01</lastmod>
+    <lastmod>2025-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,7 +11,7 @@
   <!-- portfolio -->
   <url>
     <loc>https://abstech.netlify.app/portfolio.html</loc>
-    <lastmod>2024-12-01</lastmod>
+    <lastmod>2025-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>  
@@ -19,7 +19,7 @@
   <!-- Privacy Policy Page -->
   <url>
     <loc>https://abstech.netlify.app/privacy-policy.html</loc>
-    <lastmod>2024-12-01</lastmod>
+    <lastmod>2025-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
