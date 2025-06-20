@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restricted Access - AbsTech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
+    <style>
+        body {
+            background: black;
+            color: lime;
+            font-family: monospace;
+            text-align: center;
+            padding: 50px;
+            overflow: hidden;
+        }
+        #terminal {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: auto;
+            box-shadow: 0 0 15px lime;
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <audio id="bg-music" autoplay loop>
+        <source src="https://www.fesliyanstudios.com/play-mp3/4384" type="audio/mpeg">
+    </audio><div id="terminal">
+    <h2>AUTHORIZING ACCESS...</h2>
+    <p id="progress">Initializing system...</p>
+</div>
+
+<script>
+    $(document).ready(function() {
+        let progressTexts = [
+            "Validating credentials...",
+            "Accessing secured database...",
+            "Decrypting classified data...",
+            "Retrieving top-secret files...",
+            "Finalizing access..."
+        ];
+        let index = 0;
+        let music = document.getElementById("bg-music");
+        
+        setTimeout(function startAccess() {
+            let interval = setInterval(() => {
+                if (index < progressTexts.length) {
+                    $("#progress").text(progressTexts[index]);
+                    index++;
+                } else {
+                    clearInterval(interval);
+                    showFakeData();
+                }
+            }, 2000);
+        }, 2000);
+
+        function showFakeData() {
+            iziToast.show({
+                title: 'ALERT!',
+                message: 'Unauthorized access detected!',
+                position: 'topRight',
+                color: 'red'
+            });
+            setTimeout(() => {
+                $("#terminal").html("<h2>ACCESS GRANTED</h2><p>Welcome, Agent!</p><p>Decryption successful...</p>");
+                setTimeout(() => {
+                    $("#terminal").append("<p>TOP SECRET: Hidden wealth transfer system detected...</p>");
+                    iziToast.show({
+                        title: 'WARNING!',
+                        message: 'Do NOT share this information!',
+                        position: 'bottomRight',
+                        color: 'blue'
+                    });
+                    setTimeout(() => {
+                        $("#terminal").append("<p>Retrieving protocol...</p>");
+                        setTimeout(() => {
+                            $("#terminal").html("<h2>ERROR 403: Classified Access Denied</h2><p>Security Breach Logged</p>");
+                            iziToast.show({
+                                title: 'SECURITY BREACH!',
+                                message: 'Your access has been logged. Leave immediately!',
+                                position: 'topCenter',
+                                color: 'yellow'
+                            });
+                            setTimeout(() => {
+                                $("body").html("<h1 style='color:red;'>APRIL FOOL! 😂 You got played!</h1>");
+                            }, 3000);
+                        }, 3000);
+                    }, 3000);
+                }, 3000);
+            }, 4000);
+        }
+    });
+</script>
+
+</body>
+</html>
