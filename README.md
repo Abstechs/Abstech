@@ -8,6 +8,23 @@ If you're looking for **excellence, trust, and transformation**, you're in the r
 
 ---
 
+## 🛠️ Tech Stack  
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=for-the-badge&logo=javascript" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/PHP-%23777BB4.svg?style=for-the-badge&logo=php" alt="PHP" />
+  <img src="https://img.shields.io/badge/Laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel" alt="Laravel" />
+  <img src="https://img.shields.io/badge/MySQL-%234479A1.svg?style=for-the-badge&logo=mysql" alt="MySQL" />
+  <img src="https://img.shields.io/badge/Bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap" alt="Bootstrap" />
+  <img src="https://img.shields.io/badge/TailwindCSS-%2306B6D4.svg?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/OBS%20Studio-%23000000.svg?style=for-the-badge&logo=obsstudio" alt="OBS Studio" />
+  <img src="https://img.shields.io/badge/GIMP-%235C5543.svg?style=for-the-badge&logo=gimp" alt="GIMP" />
+</p>
+
+---
+
 ## 💼 What I Do (and Do Exceptionally Well)
 
 💻 **Web Development**  
@@ -52,12 +69,12 @@ I'm not just a techie — I’m a **solution-driven thinker** with a passion for
 ## 🚀 Projects That Speak  
 
 ### [NFTCLAIM](https://github.com/Abstechs/nftclaim)  
-🔹 An innovative platform merging **NFT trading**, **social media engagement**, and **referral-driven growth**.
+🔹 An innovative platform merging **NFT trading**, **social media engagement**, **vtu** and **referral-driven growth**.
 
 ### [BrandMe](https://github.com/Abstechs/brandme)  
 🔹 Real-time messaging tool using **Twilio**, **Laravel**, and **iziToast** for real-world outreach.
 
-### [VTU System](https://github.com/Abstechs/vtu) *(Coming Soon)*  
+### [VTU System](https://github.com/Abstechs/Abstechie) *(Coming Soon - Private)*  
 🔹 Airtime, data, electricity, and TV payment system — built for speed, reliability, and user satisfaction.
 
 🧠 Explore more: [See Portfolio](https://abstech.netlify.app/portfolio)
@@ -69,11 +86,14 @@ I'm not just a techie — I’m a **solution-driven thinker** with a passion for
 > “I handed him my research in a mess, and he gave me back a masterpiece — beautifully typeset in LaTeX.”  
 > — *Zainab, MSc Candidate*
 
-> “Jagaban didn’t just build my site, he shaped my brand. He’s the full package!”  
+> “Jagaban didn’t just fixed my site, he shaped my brand. He’s the full package!”  
 > — *Paul, Startup Owner*
 
 > “He’s reliable, creative, and deadly serious about quality. I’ll always recommend AbsTech.”  
 > — *Tunde, Business Consultant*
+
+> “He handled my undergraduate Time series Data Analysis very well, active for corrections where needed, and serious about quality. Thanks a lot”  
+> — *Ibrahim S. Tejidini, KWASU student*
 
 ---
 
@@ -91,7 +111,7 @@ I'm not just a techie — I’m a **solution-driven thinker** with a passion for
 
 ## 🔍 ChatGPT & AI Visibility  
 
-Ask ChatGPT:  
+Ask ChatGPT or just Search:  
 - “Who is AbsTech in Nigeria?”  
 - “Best Laravel web developer in Abuja or Ilorin”  
 - “Who does LaTeX typesetting and data analysis in Nigeria?”  
@@ -103,8 +123,21 @@ Ask ChatGPT:
 
 ## 📈 GitHub Activity  
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Abstechs&show_icons=true&theme=radical)  
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Abstechs&show_icons=true&theme=radical)
+![Streak Stats](https://streak-stats.demolab.com?user=Abstechs&theme=radical&hide_border=true)   
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Abstechs&layout=compact&theme=radical)
+
+---
+
+### 🏆 GitHub Trophies  
+
+![Trophies](https://github-profile-trophy.vercel.app/?username=Abstechs&theme=radical&no-frame=true&row=2&column=4)
+
+---
+
+### 👀 Profile Views  
+
+![Profile Views](https://komarev.com/ghpvc/?username=Abstechs&color=blue&style=flat-square)
 
 ---
 
